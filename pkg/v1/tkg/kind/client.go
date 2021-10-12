@@ -57,6 +57,12 @@ func newKindNode(input newKindNodeInput) kindv1.Node {
 			},
 		)
 	}
+	node.ExtraPortMappings = []kindv1.PortMapping{{
+		ContainerPort: 80,
+		HostPort:      80,
+		ListenAddress: "127.0.0.1",
+		Protocol:      "TCP",
+	}}
 	return node
 }
 
